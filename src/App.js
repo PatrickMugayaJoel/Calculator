@@ -1,31 +1,15 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+
+import SidePen from "./containers/SidePen"
 
 function App() {
   return (
     <div className="App">
       <div className="row">
-        <div className="col-md-4">
-          <div className="side-pannel full-height">
-            <span className="title">Numbers</span>
-            <div className="form">
-              <form>
-                <label>Number one</label>
-                <input type="number" name="num-one" className="input"/>
-                <label>Number two</label>
-                <input type="number" name="num-two" className="input"/>
-                <label>Operation</label>
-                <select type="text" name="operation" className="input">
-                  <option value="add">ADD</option>
-                  <option value="sub">SUB</option>
-                  <option value="mul">MUL</option>
-                  <option value="div">DIV</option>
-                </select>
-                <input type="submit" className="submit" value="Post"/>
-              </form>
-            </div>
-          </div>
-        </div>
+        <SidePen />
         <div className="col-md-8">
           <div className="results-pannel full-height">
             <span className="title">Results</span>
@@ -63,7 +47,8 @@ function App() {
             </div>
           </div>
       </div>
-        </div>
+      </div>
+      <ToastContainer />
     </div>
   );
 }
