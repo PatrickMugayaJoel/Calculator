@@ -45,7 +45,7 @@ export const SidePen = () => {
             precision: 14 
         };
 
-        axios.post("http://api.mathjs.org/v4/", postData)
+        axios.post("https://api.mathjs.org/v4/", postData)
         .then(resp => {
           let rowData;
 
