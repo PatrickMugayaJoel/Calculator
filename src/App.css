@@ -1,11 +1,25 @@
 .App {
   margin: 0%;
+  width: 100vw;
+  overflow-x: auto;
+  height: 100vh;
+}
+
+.row {
+  height: 100%;
   width: 100%;
+  margin: 0px;
   background-color: #fef9e4;
 }
 
+.col-sm-4,
+.col-sm-8 {
+  padding: 0%;
+}
+
 .full-height {
-  height: 99vh;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .side-pannel {
@@ -16,7 +30,7 @@
 
 .results-pannel {
   color: #28353e;
-  padding: 2% 1%;
+  padding: 2%;
 }
 
 .title {
@@ -52,6 +66,7 @@ label {
 }
 
 .table th, .table td {
+  padding: 0.35rem;
   border-top: 2px solid #28353e;
   border-bottom: 2px solid #28353e;
 }
@@ -71,4 +86,14 @@ label {
 
 .correct {
   background-color: #ffe28a;
+}
+
+.close {
+  color: #fe0000;
+  width: 100%;
+}
+
+.close:hover,
+.close:active{
+  color: #fe0000;
 }
