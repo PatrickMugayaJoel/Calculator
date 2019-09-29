@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsPen container snapshot matches snapshot 1`] = `
+<ContextProvider
+  value={
+    Array [
+      Array [],
+      [Function],
+    ]
+  }
+>
+  <ResultPen />
+</ContextProvider>
+`;

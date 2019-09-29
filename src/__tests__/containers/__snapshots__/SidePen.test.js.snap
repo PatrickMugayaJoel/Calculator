@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidePen container snapshot matches snapshot 1`] = `
+<ResponseProvider>
+  <SidePen>
+    <div
+      className="col-sm-4"
+    >
+      <div
+        className="side-pannel full-height"
+      >
+        <span
+          className="title"
+        >
+          Numbers
+        </span>
+        <div
+          className="form"
+        >
+          <Form
+            props={
+              Object {
+                "onChange": [Function],
+                "onSubmit": [Function],
+                "state": Object {
+                  "num_one": "",
+                  "num_two": "",
+                  "operation": "add",
+                },
+              }
+            }
+          >
+            <form
+              onSubmit={[Function]}
+            >
+              <label>
+                Number one
+              </label>
+              <input
+                className="input"
+                name="num_one"
+                onChange={[Function]}
+                placeholder="Enter number one"
+                required={true}
+                type="number"
+                value=""
+              />
+              <label>
+                Number two
+              </label>
+              <input
+                className="input"
+                name="num_two"
+                onChange={[Function]}
+                placeholder="Enter number two"
+                required={true}
+                type="number"
+                value=""
+              />
+              <label>
+                Operation
+              </label>
+              <select
+                className="input"
+                name="operation"
+                onChange={[Function]}
+                type="text"
+              >
+                <option
+                  value="add"
+                >
+                  ADD
+                </option>
+                <option
+                  value="sub"
+                >
+                  SUB
+                </option>
+                <option
+                  value="mul"
+                >
+                  MUL
+                </option>
+                <option
+                  value="div"
+                >
+                  DIV
+                </option>
+              </select>
+              <input
+                className="submit"
+                type="submit"
+                value="Post"
+              />
+            </form>
+          </Form>
+        </div>
+      </div>
+    </div>
+  </SidePen>
+</ResponseProvider>
+`;
