@@ -1,37 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
 import Form from "../components/Form";
 import axios from 'axios';
+import formatData from "../Utils";
+import {ResponseContext} from "../context/ResponsesCtxt";
 
-const MakePost = postData => {
-    return axios.post("http://api.mathjs.org/v4/", postData)
-        .then(resp => {
-          toast.error("Success");
-        })
-        .catch(e => {
-          toast.error("Error!");
-        });
-}
 
-export class SidePen extends Component {
-    constructor (props) {
-      super(props);
-      this.state = {
-        num_one: "",
-        num_two: "",
-        operation: "add"
-      };
+export const SidePen = () => {
+  const [state, setState] = useState({
+    num_one: "",
+    num_two: "",
+    operation: "add"
+  });
+
+  const [responces, setResponces] = useContext(ResponseContext);
+
+  const onChange = event => {
+        setState({...state, [event.target.name]: event.target.value });
     }
 
-    onChange = event => {
-        this.setState({ [event.target.name]: event.target.value });
-    }
-
-    onSubmit = e => {
+    const onSubmit = e => {
         e.preventDefault();
 
         let operator = "";
-        switch (this.state.operation) {
+        switch (state.operation) {
           case "add":
             operator = "+";
             break;
@@ -49,30 +41,44 @@ export class SidePen extends Component {
         }
 
         const postData = { 
-            expr: `${this.state.num_one} ${operator} ${this.state.num_two}`, 
+            expr: `${state.num_one} ${operator} ${state.num_two}`, 
             precision: 14 
         };
 
-        MakePost(postData);
+        axios.post("http://api.mathjs.org/v4/", postData)
+        .then(resp => {
+          let rowData;
+
+          if(resp.data.error){
+            toast.error("Error!");
+          } else {
+            rowData = formatData(resp.data.result);
+
+            rowData = {...rowData, num_1: state.num_one, num_2: state.num_two};
+            rowData = [...responces, rowData];
+            setResponces(rowData);
+          }
+        })
+        .catch(e => {
+          toast.error("Error!");
+        });
     }
 
-    render () {
-        const props = {
-            onSubmit: this.onSubmit,
-            onChange: this.onChange,
-            state: this.state
-        };
-        return (
-          <div className="col-md-4">
-            <div className="side-pannel full-height">
-              <span className="title">Numbers</span>
-              <div className="form">
-                <Form props={props} />
-              </div>
-            </div>
+    const props = {
+        onSubmit: onSubmit,
+        onChange: onChange,
+        state: state
+    };
+    return (
+      <div className="col-md-4">
+        <div className="side-pannel full-height">
+          <span className="title">Numbers</span>
+          <div className="form">
+            <Form props={props} />
           </div>
-        );
-    }
+        </div>
+      </div>
+    );
 }
 
 export default SidePen;
