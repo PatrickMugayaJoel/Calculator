@@ -70,7 +70,7 @@ export const SidePen = () => {
         state: state
     };
     return (
-      <div className="col-md-4">
+      <div className="col-sm-4">
         <div className="side-pannel full-height">
           <span className="title">Numbers</span>
           <div className="form">

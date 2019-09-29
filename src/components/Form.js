@@ -9,7 +9,8 @@ const Form = ({props}) => {
                     className="input"
                     required
                     onChange={props.onChange}
-                    value={props.state.num_one} 
+                    value={props.state.num_one}
+                    placeholder="Enter number one"
                 />
                 <label>Number two</label>
                 <input
@@ -18,7 +19,8 @@ const Form = ({props}) => {
                     className="input"
                     required
                     onChange={props.onChange}
-                    value={props.state.num_two} 
+                    value={props.state.num_two}
+                    placeholder="Enter number two"
                 />
                 <label>Operation</label>
                 <select

@@ -5,7 +5,7 @@ import {ResponseContext} from "../context/ResponsesCtxt";
 export const ResultPen = () => {
     const [responces] = useContext(ResponseContext);
     return (
-        <div className="col-md-8">
+        <div className="col-sm-8">
         <div className="results-pannel full-height">
           <span className="title">Results</span>
           <div className="table">
@@ -23,7 +23,7 @@ export const ResultPen = () => {
               <tbody>
                 {  
                   responces.map(
-                      (result, index) => <TableRow key={index} result={result} />
+                      (result, index) => <TableRow key={index} id={index} result={result} />
                     )
                 }
               </tbody>
