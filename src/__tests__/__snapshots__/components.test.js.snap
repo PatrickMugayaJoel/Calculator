@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component snapshot matches snapshot 1`] = `
+<form
+  onSubmit={[MockFunction]}
+>
+  <label>
+    Number one
+  </label>
+  <input
+    className="input"
+    name="num_one"
+    onChange={[MockFunction]}
+    placeholder="Enter number one"
+    required={true}
+    type="number"
+    value={1}
+  />
+  <label>
+    Number two
+  </label>
+  <input
+    className="input"
+    name="num_two"
+    onChange={[MockFunction]}
+    placeholder="Enter number two"
+    required={true}
+    type="number"
+    value={2}
+  />
+  <label>
+    Operation
+  </label>
+  <select
+    className="input"
+    name="operation"
+    onChange={[MockFunction]}
+    type="text"
+  >
+    <option
+      value="add"
+    >
+      ADD
+    </option>
+    <option
+      value="sub"
+    >
+      SUB
+    </option>
+    <option
+      value="mul"
+    >
+      MUL
+    </option>
+    <option
+      value="div"
+    >
+      DIV
+    </option>
+  </select>
+  <input
+    className="submit"
+    type="submit"
+    value="Post"
+  />
+</form>
+`;
+
+exports[`TableRow component snapshot matches snapshot 1`] = `
+<ContextProvider
+  value={
+    Array [
+      Array [],
+      [Function],
+    ]
+  }
+>
+  <TableRow
+    id={0}
+    result={
+      Object {
+        "expected": "2",
+        "is_passed": "No",
+        "num_1": "1",
+        "num_2": "1",
+        "resp": "2",
+      }
+    }
+  />
+</ContextProvider>
+`;
