@@ -1,4 +1,4 @@
-## Calculator WebApp
+## Web Calculator App
 
 [![Build Status](https://travis-ci.org/PatrickMugayaJoel/WebApp.svg?branch=master)](https://travis-ci.org/PatrickMugayaJoel/WebApp)
 
